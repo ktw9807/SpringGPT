@@ -1,5 +1,6 @@
 package com.example.SpringGPT;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Builder;
@@ -19,7 +20,7 @@ public class ChatGptResponseDto implements Serializable {
     private int created;
     private String model;
     private Usage usage;
-    private List<Choice> choices;
+    private Choice[] choices;
 
     @Builder
     public ChatGptResponseDto(String json) throws JsonProcessingException {
