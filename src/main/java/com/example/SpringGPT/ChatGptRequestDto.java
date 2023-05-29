@@ -22,11 +22,12 @@ public class ChatGptRequestDto implements Serializable {
 //    private Double topP;
 
     @Builder
-    public ChatGptRequestDto(String model, String messages,
+    public ChatGptRequestDto(String model, QuestionRequestDto questionRequestDto,
                              Integer maxTokens, Double temperature,
                              Double topP) {
+        this.messages.add(new MessageDto(questionRequestDto.getUserRequest()));
         this.model = model;
-        this.messages.add(new MessageDto(messages));
+        this.messages.add(new MessageDto(questionRequestDto.getQuestion()));
 //        this.prompt = messages;
 //        this.maxTokens = maxTokens;
 //        this.temperature = temperature;
