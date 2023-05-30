@@ -10,7 +10,7 @@ public class MessageDto {
     private String content;
 
     public MessageDto(String content) {
-        this.role = "user";
+        this.role = "assistant";
         this.content = content;
     }
 }
